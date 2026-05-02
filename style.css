@@ -82,11 +82,12 @@ nav .container{
     align-items: center;    
 }
 
-.nav-logo {
+.nav-logo a{
     font-family: var(--heading-font);
     font-size: 28px;
     letter-spacing: 3px;
     color: var(--accent);
+    text-decoration: none;
 }
 
 .nav-links {
