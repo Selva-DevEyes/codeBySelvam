@@ -43,3 +43,19 @@ document.querySelectorAll("#mobileMenu a").forEach(link => {
     mobileMenu.classList.remove("active");
   });
 });
+
+  // ── Theme toggle ──
+  const root = document.documentElement;
+  const btn  = document.getElementById('themeToggle');
+  let isDark = true;
+  // Persist preference
+  const saved = localStorage.getItem('theme');
+  if (saved === 'light') { isDark = false; root.setAttribute('data-theme','light'); btn.textContent = '🌙'; }
+
+  btn.addEventListener('click', () => {
+    isDark = !isDark;
+    const theme = isDark ? 'dark' : 'light';
+    root.setAttribute('data-theme', theme);
+    btn.textContent = isDark ? '☀️' : '🌙';
+    localStorage.setItem('theme', theme);
+  });
