@@ -76,6 +76,19 @@ body {
     margin: 0 auto;
 }
 
+.mt-sm{
+    margin-top: 5px;
+}
+
+.mt-1{
+    margin-top: 10px;
+}
+
+.mb-1{
+    margin-bottom: 10px;
+}
+
+
 /* Custom cursor */
 .cursor {
     width: 12px;
@@ -195,12 +208,26 @@ nav .container {
     flex-direction: column;
     gap: 5px;
     cursor: pointer;
+    transform: rotate(0deg) translate(1px, 1px);
+    opacity: 1;
 }
 
 .hamburger span {
     width: 25px;
     height: 2px;
     background: white;
+}
+
+.hamburger:focus span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger:focus span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger:focus span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
 }
 
 /* Mobile Menu */
@@ -230,7 +257,7 @@ nav .container {
 
 #hero .container {
     display: grid;
-    gap: 60px;
+    gap: .30px;
     grid-template-columns: 1fr 1fr;
 }
 
@@ -573,7 +600,7 @@ section {
 .about-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 80px;
+    gap: 30px;
     align-items: start;
 }
 
@@ -1237,6 +1264,12 @@ footer .container {
     background: var(--accent);
 }
 
+@media (min-width: 900px) {
+    .mobile-toggle{
+        display: none;
+    }
+}
+
 @media (max-width: 1536px) {
     .container {
         max-width: 1280px;
@@ -1250,7 +1283,7 @@ footer .container {
     }
 
     section {
-        padding: 80px 24px;
+        padding: 40px 20px 50px;
     }
 
     .container {
@@ -1263,6 +1296,7 @@ footer .container {
 
     #hero .container {
         grid-template-columns: 1fr;
+        gap: 40px;
     }
 
     .hero-stats {
@@ -1302,8 +1336,12 @@ footer .container {
         gap: 20px;
     }
 
+    .about-card {
+        padding: 25px;
+}
+
     .exp-item {
-        padding: 30px;
+        padding: 20px;
     }
 
     .projects-grid {
@@ -1333,7 +1371,15 @@ footer .container {
     }
 
     .section-header {
-        margin-bottom: 30px;
+        margin-bottom: 20px;
+    }
+
+    .contact-item{
+        padding: 20px 16px;
+    }
+
+    .skill-category{
+        padding: 20px;
     }
 }
 
@@ -1347,12 +1393,24 @@ footer .container {
     }
 
     footer {
-        padding: 20px 40px;
+        padding: 20px;
     }
 
     footer .container {
         flex-direction: column;
         gap: 15px;
         align-items: start;
+    }
+
+    .footer .container a {
+        order: 1;
+    }
+
+    .footer-copy {
+        order: 2;
+    }
+
+    .footer-back {
+        order: 3;
     }
 }
