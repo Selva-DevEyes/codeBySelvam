@@ -1256,7 +1256,7 @@ footer .container {
 }
 
 @media (min-width: 900px) {
-    .mobile-toggle, .hamburger{
+    .hamburger{
         display: none;
     }
 }
